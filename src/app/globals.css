@@ -7,15 +7,19 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary:#C5FF41;
+  --color-primary: #C5FF41;
   --color-secondary: #C5FFEE;
-  --color-dark:#141414;
+  --color-darker: #141414;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 
-
+@theme{
+  --color-primary: #C5FF41;
+  --color-secondary: #C5FFEE;
+  --color-darker: #141414;
+}
 
 
 .font-sporting {
