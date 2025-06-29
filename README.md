@@ -6,7 +6,8 @@ The project fulfils every rubric item in the Raintor Ltd. technical assignment, 
 ---
 
 ## ✨ Features
--------------------------------------------------------------------------------------------|
+
+
 | **Framework**            | Next .js 15 (App Router) + TypeScript                                                     |
 | **Styling**              | Tailwind CSS with custom theme tokens (`primary`,`dark`)                       |
 | **Animation**            | Framer Motion (entrance, hover, stagger)                                        |
