@@ -27,5 +27,5 @@ font-family: 'Sporting Grotesque', sans-serif;
 }
 
 .container-default {
-  @apply 2xl:max-w-[1340px] lg:max-w-[90%] max-w-[90%] mx-auto;
+  @apply 2xl:max-w-[1400px] lg:max-w-[90%] max-w-[90%] mx-auto;
 }

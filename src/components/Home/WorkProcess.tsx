@@ -58,7 +58,7 @@ const fadeUp: Variants = {
 
 export default function WorkProcess() {
   return (
-    <section className="bg-darker mb-20 dark:bg-white dark:text-black text-white p-16 rounded-[40px] mx-5">
+    <section className="bg-darker mb-11 dark:bg-white dark:text-black text-white p-16 rounded-[40px] mx-5">
       <div className="container-default">
     {/* heading */}
     <div className='flex items-center gap-20'>
