@@ -6,7 +6,7 @@ import Button from './UI/Button';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed top-0 z-50 bg-transfarent  py-6">
+    <nav className="fixed top-0 z-50 bg-transfarent w-full mx-auto py-6">
      
         <div className='flex justify-between items-center container-default'>
            <h1 className='text-[34px] uppercase font-bold text-black dark:text-white'>devlop.me</h1> 
