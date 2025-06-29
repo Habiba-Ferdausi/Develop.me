@@ -7,16 +7,15 @@ The project fulfils every rubric item in the Raintor Ltd. technical assignment, 
 
 ## ✨ Features
 
+- **Framework**: Next.js 15 (App Router) + TypeScript  
+- **Styling**: Tailwind CSS with custom theme tokens (`light`, `dark`)  
+- **Animation**: Framer Motion (entrance, hover, stagger)  
+- **Slider / Virtualise**: Swiper.js (external-nav, autoplay) & `react-window` demo for large logo lists  
+- **Accessibility**: Semantic headings, landmark roles, keyboard nav, `aria-*` labels  
+- **Dark / Light**: Theme toggle persisted in `localStorage`, automatic `class` swap  
+- **Image optimisation**: `next/image` with `sizes` + `fill`, priority hints  
+- **Code Quality**: ESLint (`next/core-web-vitals`, `jsx-a11y`, `unicorn`) & Prettier (Husky pre-commit)  
 
-| **Framework**            | Next .js 15 (App Router) + TypeScript                                                     |
-| **Styling**              | Tailwind CSS with custom theme tokens (`primary`,`dark`)                       |
-| **Animation**            | Framer Motion (entrance, hover, stagger)                                        |
-| **Slider / Virtualise**  | Swiper.js (external‐nav, autoplay) & `react-window` demo for large logo lists              |
-| **Accessibility**        | Semantic headings, landmark roles, keyboard nav, `aria-*` labels                          |
-| **Dark / Light**         | Theme toggle persisted in `localStorage`, automatic `class` swap                          |
-| **Image optimisation**   | `next/image` with `sizes` + `fill`, priority hints                                        |
-                          |
-| **Code Quality**         | ESLint (`next/core-web-vitals`, `jsx-a11y`, `unicorn`) & Prettier (Husky pre-commit)      |
 
 ---
 
