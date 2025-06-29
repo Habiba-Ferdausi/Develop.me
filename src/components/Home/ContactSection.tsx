@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import {FaInstagram,  FaTwitter, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import SectionTitle, { Highlight } from '../UI/SectionTitle';
 import { GoArrowDown } from 'react-icons/go';
 import SectionButton from '../UI/SectionButton';
@@ -25,40 +26,61 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative">
-      <div className="container-default pt-7 pb-40 flex justify-between items-center  relative z-10">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="relative "
+    >
+      <div className="container-default overflow-hidden pt-7 pb-40 flex justify-between lg:items-center relative z-10 gap-10 flex-col lg:flex-row">
         {/* Left */}
-        <div className='w-[840px]'>
-            {/* heading */}
-        <div  className="flex items-center">
-                <GoArrowDown className="w-11 h-11 p-2 text-[12px] rounded-full border dark:border-white border-black grid place-content-center" />
-                <SectionButton text="Contact" className="dark:border-white border-black" />
-              </div>
-        <SectionTitle className='mt-5'>
-        Interested in<br/><Highlight variant="pill">work</Highlight> together?
-                  </SectionTitle>
-        <SectionText className='text-black w-[713px] dark:text-white mt-4 mb-6' text="We start every new client interaction with an in-depth discovery call where
-we get to know each other"/>
-          
-          <Button
-              text="Schedule a Call"
-              icon={<IoCall />}
-              className="py-2 mt-4"
-              iconClassName="border text-xl border-black dark:border-white rounded-full p-1 h-[54px] w-[54px] flex justify-center items-center"
-             
-            />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="w-[840px]"
+        >
+          {/* heading */}
+          <div className="flex items-center">
+            <GoArrowDown className="lg:w-11 w-10 lg:h-11 h-10 p-2 text-[12px] rounded-full border dark:border-white border-black grid place-content-center" />
+            <SectionButton text="Contact" className="dark:border-white border-black" />
+          </div>
+          <SectionTitle className="mt-5">
+            Interested in
+            <br />
+            <Highlight variant="pill">work</Highlight> together?
+          </SectionTitle>
+          <SectionText
+            className="text-black lg:w-[713px] w-[300px] dark:text-white mt-4 mb-6"
+            text="We start every new client interaction with an in-depth discovery call where we get to know each other"
+          />
 
-        {/* Right */}
-        <div className="bg-black text-white py-7 px-8 rounded-[30px] w-[500px]">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <Button
+            text="Schedule a Call"
+            icon={<IoCall />}
+            className="lg:py-2 py-1.5 mt-4"
+            iconClassName="border text-xl border-black dark:border-white rounded-full p-1 lg:h-[54px] h-8 lg:w-[54px] w-8 flex justify-center items-center"
+          />
+        </motion.div>
+
+        {/* Right Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-black text-white py-7 px-8 lg:rounded-[30px] rounded-xl lg:w-[500px]"
+        >
+          <form onSubmit={handleSubmit} className="flex flex-col lg:gap-6 gap-5">
             <input
               type="text"
               name="name"
               placeholder="Enter your name"
               value={form.name}
               onChange={handleChange}
-              className="bg-transparent border-b border-gray-600 text-lg py-3 focus:outline-none focus:border-primary  placeholder-white/60  text-white "
+              className="bg-transparent border-b border-gray-600 lg:text-lg text-sm py-3 focus:outline-none focus:border-primary  placeholder-white/60  text-white "
               required
             />
             <input
@@ -67,7 +89,7 @@ we get to know each other"/>
               placeholder="Your email address"
               value={form.email}
               onChange={handleChange}
-              className="bg-transparent border-b border-gray-600 text-lg py-3 focus:outline-none focus:border-primary  placeholder-white/60  text-white "
+              className="bg-transparent border-b border-gray-600 lg:text-lg text-sm py-3 focus:outline-none focus:border-primary  placeholder-white/60  text-white "
               required
             />
             <textarea
@@ -76,51 +98,46 @@ we get to know each other"/>
               value={form.message}
               onChange={handleChange}
               rows={1}
-              className="bg-transparent border-b border-gray-600 text-lg py-3 focus:outline-none focus:border-primary  placeholder-white/60  text-white "
+              className="bg-transparent border-b border-gray-600 lg:text-lg text-sm py-3 focus:outline-none focus:border-primary  placeholder-white/60  text-white "
               required
             />
-            <div className="flex items-center gap-6 mt-5 text-white dark:text-black">
-               
-          <Button
-              text="Send"
-              icon={<IoIosSend/>}
-              className="py-1 text-white dark:text-black dark:border-black border-white"
-              iconClassName="border text-xl text-white dark:text-black dark:border-black border-white rounded-full p-1 h-9 w-9 flex justify-center items-center"
-             
-            />
-            <p className='text-lg text-white/80'>Or</p>
-             
-          <Button
-              text="Contact me"
-              icon={<MdEmail/>}
-              className="py-1 text-white dark:text-black dark:border-black border-white"
-              iconClassName="border text-white dark:text-black text-xl dark:border-black border-white rounded-full p-1 h-9 w-9 flex justify-center items-center"
-             
-            />
+            <div className="flex items-center gap-3 lg:gap-6 mt-5 text-white dark:text-black">
+              <Button
+                text="Send"
+                icon={<IoIosSend />}
+                className="py-1 text-white dark:text-black dark:border-black border-white"
+                iconClassName="border lg:text-xl text-lg text-white dark:text-black dark:border-black border-white rounded-full p-1 lg:h-9 h-6 lg:w-9 w-6 flex justify-center items-center"
+              />
+              <p className="lg:text-lg text-xs text-white/80">Or</p>
+              <Button
+                text="Contact me"
+                icon={<MdEmail />}
+                className="py-1 text-white dark:text-black dark:border-black border-white"
+                iconClassName="border text-white dark:text-black lg:text-xl text-lg dark:border-black border-white rounded-full p-1 lg:h-9 h-6 lg:w-9 w-6 flex justify-center items-center"
+              />
             </div>
           </form>
-          <div className="pt-[75px] mb-2 flex items-center gap-24">
-            <p className="text-white/80 text-lg">@williamrey</p>
-            <div className="flex items-center gap-4 text-2xl">
-            
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="lg:pt-[75px] pt-16 mb-2 flex items-center lg:gap-24 gap-12"
+          >
+            <p className="text-white/80 lg:text-lg text-xs">@williamrey</p>
+            <div className="flex items-center gap-4 lg:text-2xl text-lg">
               <FaFacebook />
               <FaTwitter />
               <FaInstagram />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div
-        className="absolute inset-0 z-0">
-        <Image
-          src="/contact-bg.png"
-          alt="Contact background"
-          fill
-          priority
-    
-        />
-</div>
-    </section>
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <Image src="/contact-bg.png" alt="Contact background" fill priority />
+      </div>
+    </motion.section>
   );
 }

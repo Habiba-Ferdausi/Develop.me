@@ -6,7 +6,7 @@ import React from "react";
 const SectionHeading: React.FC<SectionTextProps> = ({ text, className }) => {
   return (
     <h2
-      className={`text-[58px] leading-[86px] font-bold  ${className || ""}`}
+      className={`lg:text-[58px] text-[24px] lg:leading-[86px] font-bold  ${className || ""}`}
     >
       {text}
     </h2>

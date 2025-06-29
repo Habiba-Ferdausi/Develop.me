@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
       whileTap={{ scale: 0.97 }}
       className={`
         rounded-full border pe-3 cursor-pointer
-        border-black dark:border-white text-[16px]
+        border-black dark:border-white lg:text-[16px] text-[12px]
         text-black dark:text-white transition-all duration-200
         flex items-center justify-center gap-2
         ${className}

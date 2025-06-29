@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`font-sporting  antialiased`}
+        className={`font-sporting `}
       >
         <ThemeProvider>
           <Navbar />

@@ -112,7 +112,7 @@ export default function Navbar() {
           <Button
             text="Start Project"
             icon={<ArrowRight />}
-            className="w-56 justify-center"
+            className="py-1 justify-center"
           />
 
           <ThemeToggle />
