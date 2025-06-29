@@ -1,17 +1,27 @@
 @import url('https://fonts.cdnfonts.com/css/sporting-grotesque');
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: light --default,
+   dark --prefersdark; 
 }
-
-
-@theme {
-
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
   --color-primary:#C5FF41;
   --color-secondary: #C5FFEE;
   --color-dark:#141414;
-  --font-sporting: 'Sporting Grotesque';
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+
+
+
+
 .font-sporting {
 font-family: 'Sporting Grotesque', sans-serif;
+}
+
+.container-default {
+  @apply 2xl:max-w-[1340px] lg:max-w-[90%] max-w-[90%] mx-auto;
 }
