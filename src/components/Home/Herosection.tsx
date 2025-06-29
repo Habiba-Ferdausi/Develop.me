@@ -47,7 +47,7 @@ export default function HeroSection() {
         variants={bgVariants}
       >
         <Image
-          src="/bg.png"
+          src="/hero-bg.png"
           alt="Website background"
           fill
           priority
@@ -61,7 +61,7 @@ export default function HeroSection() {
         className="relative z-10 pt-30 pb-50 container-default flex flex-col justify-center"
       >
         <motion.div variants={itemVariants} className="mt-20">
-          <SectionTitle className="leading-[1.08] text-5xl lg:text-7xl font-black">
+          <SectionTitle >
             Trusted <Highlight variant="pill">Partner</Highlight> for
             <br />
             Your Website <Highlight variant="dot">Develop.</Highlight>
